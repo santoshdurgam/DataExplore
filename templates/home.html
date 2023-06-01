@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My DataViz Web Page</title>
+    <meta charset="utf-8"/>
+<script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.9.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.1"></script>
+</head>
+<body>
+	<form method="POST">
+		Enter your data question here: <input type="text" name="text"  size="200">
+		<button type="submit">Submit</button>
+
+        <div id="vis"></div>
+	</form>
+
+
+	{% if response %}
+		<div> Printing Output  <br>
+            {{ response }} <br>
+            <a href="/chart_highchart.html"> see the highchart here</a><br><a href="/chart_vega.html"> see the Vega here</a>
+
+          </div>
+	{% endif %}
+      <div id="vis"></div>
+
+</body>
+</html>

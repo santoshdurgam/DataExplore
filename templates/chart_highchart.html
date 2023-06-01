@@ -1,0 +1,48 @@
+Highchart HTML for the chart:
+
+<div id="container" style="width: 800px; height: 600px;"></div>
+<script>
+Highcharts.chart('container', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Total Sales by City'
+    },
+    xAxis: {
+        categories: ['NEW ORLEANS'],
+        labels: {
+            style: {
+                color: '#333'
+            }
+        }
+    },
+    yAxis: {
+        title: {
+            text: 'Total Sales'
+        }
+    },
+    series: [{
+        name: 'Sales',
+        data: [54624.0],
+        color: '#7cb5ec'
+    }]
+});
+</script>
+
+HTML table for the data:
+
+<table style="border-collapse: collapse; border: 1px solid black;">
+<thead>
+<tr>
+<th style="border: 1px solid black; padding: 5px;">City</th>
+<th style="border: 1px solid black; padding: 5px;">Total Sales</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border: 1px solid black; padding: 5px;">NEW ORLEANS</td>
+<td style="border: 1px solid black; padding: 5px;">54624.0</td>
+</tr>
+</tbody>
+</table>

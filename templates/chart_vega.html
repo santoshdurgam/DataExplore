@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Charts using Vega</title>
+<meta charset="utf-8"/>
+<script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.9.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.1"></script>
+</head>
+<body>
+<div id="chart"></div>
+<script>
+    const data = [
+      {"city": "NEW ORLEANS", "revenue": 54624.0},
+      {"city": "MEMPHIS", "revenue": 36220.0},
+      {"city": "SAN DIEGO", "revenue": 32079.0},
+      {"city": "SCHAUMBURG", "revenue": 25303.0},
+      {"city": "LITTLE ROCK", "revenue": 23180.0},
+      {"city": "MINNEAPOLIS", "revenue": 22261.0},
+      {"city": "LOS ANGELES", "revenue": 21138.0},
+      {"city": "PHOENIX", "revenue": 20935.0},
+      {"city": "PORTLAND", "revenue": 17698.0},
+      {"city": "JACKSON", "revenue": 17548.0},
+      {"city": "ARLINGTON HEIGHTS", "revenue": 17100.0},
+      {"city": "SAN FRANCISCO", "revenue": 16693.0},
+      {"city": "SEATTLE", "revenue": 14882.0},
+      {"city": "CHICAGO", "revenue": 13917.0},
+      {"city": "SAINT LOUIS", "revenue": 13908.0}
+    ];
+
+    const spec = {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "width": "800",
+      "height": "600",
+      "data": {
+        "values": data
+      },
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "city",
+          "type": "nominal",
+          "sort": {"op": "sum", "field": "revenue", "order": "descending"},
+          "axis": {"labelAngle": -45, "labelColor": "gray"}
+        },
+        "y": {
+          "field": "revenue",
+          "type": "quantitative",
+          "axis": {"labelColor": "gray"}
+        },
+        "color": {
+          "field": "city",
+          "type": "nominal",
+          "scale": {"range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf", "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"]}
+        }
+      }
+    };
+
+    vegaEmbed('#chart', spec);
+  </script>
+</body>
+</html>
