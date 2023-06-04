@@ -37,7 +37,7 @@ def create_chart_using_vega(input_data):
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.9.1"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.1"></script>
 
-    Question: create appropriate charts for data input {Result}. Strictly it should be in dimension of width by 800 and hieght by 600 pixels. Also use different shade of colors for charts in x axis 
+    Question: create appropriate charts for data input {Result}. Strictly it should be in dimension of width by 800 and hieght by 600 pixels. Also use different shade of colors for charts in x axis. Along with this, create html table borders and well formatted to render the input {Result} data.
     Answer: generate the formatted code here"""
     vega_viz_prompt_template = PromptTemplate(input_variables=["Result"], template=vega_viz_template)
     viz_chain = LLMChain(llm=llm, prompt=vega_viz_prompt_template, output_key="code")
@@ -69,7 +69,7 @@ def create_chart_using_highchart(input_data):
     # This is an LLMChain to write a review of a play given a synopsis.
     vega_viz_template = """you are UI developer who generates appropriate highchart html using the documentation samples in https://www.highcharts.com/docs/index.  
 
-    Question: create appropriate charts for data input {Result}. Strictly it should be in dimension of width by 800 and hieght by 600 pixels. Along with this, create html table borders and well formatted to render the input {Result} data. Also use different shade of colors for charts in x axis. 
+    Question: create appropriate charts for data input {Result}. Strictly it should be in dimension of width by 800 and hieght by 600 pixels. Strictly use different colors in x axis. Along with this, create html table borders and well formatted to render the input {Result} data.  
     Answer: generate the formatted code here"""
     vega_viz_prompt_template = PromptTemplate(input_variables=["Result"], template=vega_viz_template)
     viz_chain = LLMChain(llm=llm, prompt=vega_viz_prompt_template, output_key="code")
@@ -123,7 +123,7 @@ def convert_question_to_charts(query):
     # # natural language db response
     print(nl_db_response)
 
-    # output_vega = create_chart_using_vega(nl_db_response)
+    output_vega = create_chart_using_vega(nl_db_response)
     ouput_hc = create_chart_using_highchart(nl_db_response)
 
     return nl_db_response

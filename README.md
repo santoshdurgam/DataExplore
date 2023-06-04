@@ -4,3 +4,5 @@ This framework utilizes 2 major components. One is LangChain and the second is v
 **LangChain**: I have used _**SQLDatabaseChain**_. I have overridden the default prompt template to receive the naturally speaking language question and get SqlQuery, SqlResult and Naturally understandable answers. I have used a few concepts like sequentialChain to connect these inputs and outputs.
 
 **Visualization**: I have started with open-source _**Vega (Facebook developed charts)**_. I am feeding their GitHub to create any chart we need based on data input. Sometimes it might be a bar chart or pie chart. This will be derived based on data input. Also i have experimented with another external charts like _**Highchart**_ where there is api documentation avaiable to utilise and create graphs. We can extend further to add future steps. 
+
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/Yl5KkqJPqM7/0.jpg)](http://www.youtube.com/watch?v=l5KkqJPqM7 "DataExplore Demo")

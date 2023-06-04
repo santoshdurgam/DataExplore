@@ -2,7 +2,7 @@
 
 <html>
 <head>
-<title>Charts using Vega</title>
+<title>Charts and Table</title>
 <meta charset="utf-8"/>
 <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.9.1"></script>
@@ -10,53 +10,71 @@
 </head>
 <body>
 <div id="chart"></div>
+<br/>
+<table style="border: 1px solid black; border-collapse: collapse;">
+<thead>
+<tr>
+<th style="border: 1px solid black; padding: 5px;">Stock</th>
+<th style="border: 1px solid black; padding: 5px;">Volume</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border: 1px solid black; padding: 5px;">General Electric Company Common Stock</td>
+<td style="border: 1px solid black; padding: 5px;">100000</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding: 5px;">Advanced Micro Devices, Inc. - Common Stock</td>
+<td style="border: 1px solid black; padding: 5px;">95000</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding: 5px;">Bank of America Corporation Common Stock</td>
+<td style="border: 1px solid black; padding: 5px;">90000</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding: 5px;">Apple Inc. - Common Stock</td>
+<td style="border: 1px solid black; padding: 5px;">85000</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding: 5px;">Micron Technology, Inc. - Common Stock</td>
+<td style="border: 1px solid black; padding: 5px;">80000</td>
+</tr>
+</tbody>
+</table>
 <script>
-    const data = [
-      {"city": "NEW ORLEANS", "revenue": 54624.0},
-      {"city": "MEMPHIS", "revenue": 36220.0},
-      {"city": "SAN DIEGO", "revenue": 32079.0},
-      {"city": "SCHAUMBURG", "revenue": 25303.0},
-      {"city": "LITTLE ROCK", "revenue": 23180.0},
-      {"city": "MINNEAPOLIS", "revenue": 22261.0},
-      {"city": "LOS ANGELES", "revenue": 21138.0},
-      {"city": "PHOENIX", "revenue": 20935.0},
-      {"city": "PORTLAND", "revenue": 17698.0},
-      {"city": "JACKSON", "revenue": 17548.0},
-      {"city": "ARLINGTON HEIGHTS", "revenue": 17100.0},
-      {"city": "SAN FRANCISCO", "revenue": 16693.0},
-      {"city": "SEATTLE", "revenue": 14882.0},
-      {"city": "CHICAGO", "revenue": 13917.0},
-      {"city": "SAINT LOUIS", "revenue": 13908.0}
-    ];
-
     const spec = {
       "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-      "width": "800",
-      "height": "600",
       "data": {
-        "values": data
+        "values": [
+          {"stock": "General Electric Company Common Stock", "volume": 100000},
+          {"stock": "Advanced Micro Devices, Inc. - Common Stock", "volume": 95000},
+          {"stock": "Bank of America Corporation Common Stock", "volume": 90000},
+          {"stock": "Apple Inc. - Common Stock", "volume": 85000},
+          {"stock": "Micron Technology, Inc. - Common Stock", "volume": 80000}
+        ]
       },
       "mark": "bar",
       "encoding": {
         "x": {
-          "field": "city",
+          "field": "stock",
           "type": "nominal",
-          "sort": {"op": "sum", "field": "revenue", "order": "descending"},
-          "axis": {"labelAngle": -45, "labelColor": "gray"}
+          "sort": {"op": "count", "field": "volume", "order": "descending"},
+          "axis": {"labelAngle": -45, "labelColor": "gray", "labelFont": "Arial", "labelFontSize": 12}
         },
         "y": {
-          "field": "revenue",
+          "field": "volume",
           "type": "quantitative",
-          "axis": {"labelColor": "gray"}
+          "axis": {"labelColor": "gray", "labelFont": "Arial", "labelFontSize": 12}
         },
         "color": {
-          "field": "city",
+          "field": "stock",
           "type": "nominal",
-          "scale": {"range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf", "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"]}
+          "scale": {"range": ["#FFC300", "#FF5733", "#C70039", "#900C3F", "#581845"]}
         }
-      }
+      },
+      "width": 800,
+      "height": 600
     };
-
     vegaEmbed('#chart', spec);
   </script>
 </body>

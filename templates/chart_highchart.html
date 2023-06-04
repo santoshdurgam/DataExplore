@@ -1,48 +1,181 @@
-Highchart HTML for the chart:
+Highchart HTML code for the charts:
 
-<div id="container" style="width: 800px; height: 600px;"></div>
+<div id="chart1" style="width: 800px; height: 600px;"></div>
+<div id="chart2" style="width: 800px; height: 600px;"></div>
+<div id="chart3" style="width: 800px; height: 600px;"></div>
+<div id="chart4" style="width: 800px; height: 600px;"></div>
+<div id="chart5" style="width: 800px; height: 600px;"></div>
 <script>
-Highcharts.chart('container', {
+Highcharts.chart('chart1', {
     chart: {
         type: 'column'
     },
     title: {
-        text: 'Total Sales by City'
+        text: 'General Electric Company Common Stock'
     },
     xAxis: {
-        categories: ['NEW ORLEANS'],
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        crosshair: true,
         labels: {
             style: {
-                color: '#333'
+                color: '#000000'
             }
         }
     },
     yAxis: {
+        min: 0,
         title: {
-            text: 'Total Sales'
+            text: 'Volume'
         }
     },
     series: [{
-        name: 'Sales',
-        data: [54624.0],
-        color: '#7cb5ec'
+        name: 'Volume',
+        data: [volume1, volume2, ..., volume12]
+    }]
+});
+
+Highcharts.chart('chart2', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Advanced Micro Devices, Inc. - Common Stock'
+    },
+    xAxis: {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        crosshair: true,
+        labels: {
+            style: {
+                color: '#FF0000'
+            }
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Volume'
+        }
+    },
+    series: [{
+        name: 'Volume',
+        data: [volume1, volume2, ..., volume12]
+    }]
+});
+
+Highcharts.chart('chart3', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Bank of America Corporation Common Stock'
+    },
+    xAxis: {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        crosshair: true,
+        labels: {
+            style: {
+                color: '#00FF00'
+            }
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Volume'
+        }
+    },
+    series: [{
+        name: 'Volume',
+        data: [volume1, volume2, ..., volume12]
+    }]
+});
+
+Highcharts.chart('chart4', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Apple Inc. - Common Stock'
+    },
+    xAxis: {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        crosshair: true,
+        labels: {
+            style: {
+                color: '#0000FF'
+            }
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Volume'
+        }
+    },
+    series: [{
+        name: 'Volume',
+        data: [volume1, volume2, ..., volume12]
+    }]
+});
+
+Highcharts.chart('chart5', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Micron Technology, Inc. - Common Stock'
+    },
+    xAxis: {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        crosshair: true,
+        labels: {
+            style: {
+                color: '#FF00FF'
+            }
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Volume'
+        }
+    },
+    series: [{
+        name: 'Volume',
+        data: [volume1, volume2, ..., volume12]
     }]
 });
 </script>
 
-HTML table for the data:
+HTML code for the table:
 
-<table style="border-collapse: collapse; border: 1px solid black;">
+<table style="border: 1px solid black; border-collapse: collapse;">
 <thead>
 <tr>
-<th style="border: 1px solid black; padding: 5px;">City</th>
-<th style="border: 1px solid black; padding: 5px;">Total Sales</th>
+<th style="border: 1px solid black; padding: 5px;">Name</th>
+<th style="border: 1px solid black; padding: 5px;">Data</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="border: 1px solid black; padding: 5px;">NEW ORLEANS</td>
-<td style="border: 1px solid black; padding: 5px;">54624.0</td>
+<td style="border: 1px solid black; padding: 5px;">General Electric Company Common Stock</td>
+<td style="border: 1px solid black; padding: 5px;">[volume1, volume2, ..., volume12]</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding: 5px;">Advanced Micro Devices, Inc. - Common Stock</td>
+<td style="border: 1px solid black; padding: 5px;">[volume1, volume2, ..., volume12]</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding: 5px;">Bank of America Corporation Common Stock</td>
+<td style="border: 1px solid black; padding: 5px;">[volume1, volume2, ..., volume12]</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding: 5px;">Apple Inc. - Common Stock</td>
+<td style="border: 1px solid black; padding: 5px;">[volume1, volume2, ..., volume12]</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding: 5px;">Micron Technology, Inc. - Common Stock</td>
+<td style="border: 1px solid black; padding: 5px;">[volume1, volume2, ..., volume12]</td>
 </tr>
 </tbody>
 </table>
